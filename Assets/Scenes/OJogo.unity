@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 577026461}
   - component: {fileID: 577026457}
   - component: {fileID: 577026456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alvo
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -566,6 +566,8 @@ MonoBehaviour:
   moveSpeed: 5
   jumpTime: 0.1
   jumpForce: 5
+  isJump: 0
+  movementInput: {x: 0, y: 0}
   positionHistory: []
   timeHistory: []
   recordTime: 5
@@ -617,10 +619,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 150
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 8
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -714,6 +716,8 @@ MonoBehaviour:
   moveSpeed: 5
   jumpTime: 0.1
   jumpForce: 5
+  isJump: 0
+  movementInput: {x: 0, y: 0}
   positionHistory: []
   timeHistory: []
   recordTime: 5
@@ -1992,7 +1996,7 @@ GameObject:
   - component: {fileID: 2103818020}
   - component: {fileID: 2103818019}
   - component: {fileID: 2103818018}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sombra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2012,7 +2016,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadePerseguir: 3
-  alvo: {fileID: 0}
+  suavizacaoMovimento: 0.1
+  tempoIniciar: 1.5
+  playerScript: {fileID: 577026461}
 --- !u!50 &2103818019
 Rigidbody2D:
   serializedVersion: 4
@@ -2021,14 +2027,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103818017}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2069,7 +2075,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

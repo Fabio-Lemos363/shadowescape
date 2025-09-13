@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class Sombra : MonoBehaviour
 {
@@ -7,7 +10,7 @@ public class Sombra : MonoBehaviour
     public float velocidadePerseguir = 7f;
     public float suavizacaoMovimento = 0.1f;
     public float tempoIniciar = 1.5f;
-    
+
     private Transform alvo;
     private Rigidbody2D rb;
     public Player playerScript;
@@ -17,7 +20,7 @@ public class Sombra : MonoBehaviour
 
     void Start()
     {
-      
+
     }
 
     void FixedUpdate()
@@ -29,7 +32,11 @@ public class Sombra : MonoBehaviour
             transform.position = position;
         }
         tempoIniciar -= Time.deltaTime;
+       
     }
-    
-  
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        SceneManager.LoadScene("OJogo");
+    }
 }
