@@ -9,10 +9,10 @@ public class Player : MonoBehaviour
     public float jumpTime = 0.1f;
     public float jumpForce = 5f;
     private float jumpRemainingTime = 0f;
-    bool isJump;
+    public bool isJump;
 
     private Rigidbody2D rb;
-    private Vector2 movementInput;
+    public Vector2 movementInput;
 
     [Header("Histórico de Posições")]
     public List<Vector2> positionHistory = new List<Vector2>();
@@ -70,4 +70,3 @@ public class Player : MonoBehaviour
 
     }
 }
-//dsfafa
